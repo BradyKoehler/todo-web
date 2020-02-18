@@ -1,0 +1,12 @@
+<h3>Login</h3>
+<form>
+  <label>Email</label>
+  <input type="text" name="email" [(ngModel)]="user.email" />
+  <br />
+  <label>Password</label>
+  <input type="password" name="password" [(ngModel)]="user.password" />
+  <br />
+  <button (click)="login()">Login</button>
+</form>
+<br />
+{{user.email}} : {{user.password}}
