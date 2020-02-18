@@ -1,0 +1,4 @@
+span {
+  &.incomplete { color: red;   }
+  &.complete   { color: green; }
+}

@@ -1,0 +1,11 @@
+<p>lists works!</p>
+<p>
+  New List:
+  <input type="text" name="name" [(ngModel)]="list.name" />
+  <button (click)="create()">Create</button>
+</p>
+<ul>
+  <li *ngFor="let list of lists">
+    <a routerLink="/lists/{{list.id}}">{{list.name}}</a>
+  </li>
+</ul>

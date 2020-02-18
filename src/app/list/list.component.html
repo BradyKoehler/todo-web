@@ -1,0 +1,22 @@
+<div *ngIf="list">
+  <h3>{{list.name}}
+    <small *ngIf="!gridView">(<a routerLink="/lists/{{id}}/grid">grid</a>)</small>
+  </h3>
+
+  <p>
+    <input type="checkbox" id="showAll" name="showAll" [(ngModel)]="showAll" />
+    <label for="showAll">Show all</label>
+  </p>
+
+  <ul>
+    <li>[new] <input type="text" name="title" [(ngModel)]="title" />
+      <button (click)="create()">Create</button></li>
+    <li *ngFor="let todo of todos" [hidden]="todo.status === 'complete' && !showAll">
+      [<span class="{{todo.status}}">{{todo.status}}</span>]
+      {{todo.title}}
+      <button *ngIf="todo.status === 'incomplete'" (click)="complete(todo)">Complete</button>
+      <button *ngIf="todo.status === 'complete'" (click)="incomplete(todo)">Incomplete</button>
+      <button (click)="delete(todo.id)">Delete</button>
+    </li>
+  </ul>
+</div>
